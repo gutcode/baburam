@@ -1,3 +1,6 @@
-title: "My Resume"
-description: "Passion for tech and AI"
 theme: jekyll-theme-resume
+title: Your Name
+email: your.email@example.com
+description: "I aim to create an interactive and engaging platform for collaboration and knowledge sharing."
+github: https://gutcode.github.io/baburam
+linkedin: https://linkedin.com/in/gutcode
