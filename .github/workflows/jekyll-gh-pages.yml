@@ -11,34 +11,41 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1) Check out your repository code
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Set up Pages
-        uses: actions/configure-pages@v5
+      # 2) Use ruby/setup-ruby, which handles Ruby installation and caching
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"      # Change to whatever Ruby version you need
+          bundler-cache: true      # Speeds up subsequent runs by caching gems
 
-      - name: Install Ruby and Gems
+      # 3) Install your Gemfile dependencies
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full build-essential zlib1g-dev
-          gem install bundler
           bundle install
 
-      - name: Build site
-        run: bundle exec jekyll build --trace --destination _site
+      # 4) Build your Jekyll site
+      - name: Build Jekyll site
+        run: |
+          bundle exec jekyll build --trace --destination _site
 
-      - name: Upload artifact
+      # 5) Upload the generated site as an artifact
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: _site  # Matches the --destination _site above
 
+  # Deploy job
   deploy:
     environment:
       name: github-pages
@@ -46,6 +53,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # Deploy the artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
