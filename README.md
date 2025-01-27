@@ -1,2 +1,2 @@
 # Resume
-baburam.github.io
+I am currently developing a GitHub page to showcase my projects, technical skills, and professional journey. This page highlights my expertise in IT support, web development, and farming eCommerce solutions. It also serves as a portfolio of my work, including coding projects, business plans, and creative problem-solving in various fields. By integrating React, Node.js, and other modern technologies, I aim to create an interactive and engaging platform for collaboration and knowledge sharing.
