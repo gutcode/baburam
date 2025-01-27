@@ -61,3 +61,4 @@ _Bachelor's Degree in Statistics and Economics_ (2011 – 2016)
 - **Phone:** +36 30 535 5513  
 - **LinkedIn:** [linkedin.com/in/gutcode](https://linkedin.com/in/gutcode)  
 - **GitHub:** [Your GitHub Username](https://github.com/your-username)  
+<link rel="stylesheet" href="/assets/css/style.css">
