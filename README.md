@@ -1,2 +1,2 @@
-# baburam
+# Resume
 baburam.github.io
